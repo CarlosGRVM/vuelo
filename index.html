@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flight Dashboard</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <!-- ====== SIDEBAR ====== -->
+  <aside class="sidebar">
+    <div class="profile">
+      <img src="https://i.pravatar.cc/100?img=12" alt="User">
+      <h3>Alex Johnson</h3>
+      <p>alex.johnson@gmail.com</p>
+    </div>
+
+    <nav>
+      <a href="#"><span>🏠</span> Dashboard</a>
+      <a href="#"><span>✈️</span> Flights</a>
+      <a href="#"><span>💳</span> Wallet</a>
+      <a href="#"><span>📊</span> Reports</a>
+      <a href="#"><span>📈</span> Statistics</a>
+      <a href="#"><span>⚙️</span> Settings</a>
+    </nav>
+
+    <div class="active-users">
+      <h5>Active Users</h5>
+      <div class="avatars">
+        <img src="https://i.pravatar.cc/40?img=1">
+        <img src="https://i.pravatar.cc/40?img=2">
+        <img src="https://i.pravatar.cc/40?img=3">
+        <img src="https://i.pravatar.cc/40?img=4">
+        <span>+70</span>
+      </div>
+      <img class="world" src="./img/map.png"
+        alt="Map">
+    </div>
+  </aside>
+
+  <!-- ====== MAIN ====== -->
+  <main class="main">
+    <!-- TARJETAS -->
+    <section class="cards">
+      <div class="card gold">
+        <div>
+          <h4>Boeing 787</h4>
+          <p>$548</p>
+        </div>
+        <img src="https://cdn-icons-png.flaticon.com/512/787/787535.png" alt="Plane">
+      </div>
+      <div class="card teal">
+        <div>
+          <h4>Airbus 811</h4>
+          <p>$620</p>
+        </div>
+        <img src="https://cdn-icons-png.flaticon.com/512/787/787536.png" alt="Plane">
+      </div>
+      <div class="card dark">
+        <div>
+          <h4>Total Flights</h4>
+          <p>850</p>
+        </div>
+        <img src="./img/map.png" alt="Map">
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE TRIPS Y GRÁFICOS -->
+    <section class="grid-top">
+      <div class="block last-trips">
+        <h3>Last Trips</h3>
+        <p class="subtitle">Overview of latest month</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Members</th>
+              <th>Flight</th>
+              <th>Total Members</th>
+              <th>Ticket Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="https://i.pravatar.cc/40?img=5"> John Doe<br><span>johnh@gmail.com</span></td>
+              <td>Qatar</td>
+              <td>
+                <div class="circle">5</div>
+              </td>
+              <td>$56k</td>
+            </tr>
+            <tr>
+              <td><img src="https://i.pravatar.cc/40?img=6"> Martin Loiness<br><span>martin_loi@gmail.com</span></td>
+              <td>Emirates</td>
+              <td>
+                <div class="circle">2</div>
+              </td>
+              <td>$56k</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="block chart">
+        <h3>Statistics</h3>
+        <canvas id="barChart"></canvas>
+      </div>
+    </section>
+
+    <section class="grid-bottom">
+      <div class="block chart chart-doughnut">
+        <h3>Flights Share</h3>
+        <canvas id="doughnutChart"></canvas>
+      </div>
+      <div class="block chart">
+        <h3>Flights Schedule</h3>
+        <canvas id="lineChart"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

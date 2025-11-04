@@ -1,0 +1,255 @@
+:root {
+  --dark: #324644;
+  --teal: #3d5a57;
+  --gold: #d6b354;
+  --bg: #E6EFEF;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  background-color: var(--bg);
+  min-height: 100vh;
+  color: #333;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  background-color: var(--teal);
+  width: 250px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0 25px 25px 0;
+  position: relative;
+  overflow: visible;
+  z-index: 2;
+}
+
+.profile {
+  text-align: center;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 80px;
+}
+
+.profile h3 {
+  margin-top: 10px;
+}
+
+.profile p {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+/* ===== NAV ===== */
+nav {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+nav a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  transition: all 0.35s ease;
+  overflow: visible;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #E6EFEF;
+  color: #2b3d3f;
+  font-weight: 600;
+  transform: translateX(30px);
+  z-index: 10;
+}
+
+
+
+nav a span {
+  font-size: 1.2rem;
+}
+
+/* ===== ACTIVE USERS ===== */
+.active-users {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.avatars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.avatars img {
+  border-radius: 50%;
+  width: 30px;
+  margin-right: -5px;
+  border: 2px solid var(--teal);
+}
+
+.avatars span {
+  background-color: var(--gold);
+  border-radius: 50%;
+  padding: 3px 6px;
+  font-weight: 600;
+  color: #2b3d3f;
+  margin-left: 5px;
+}
+
+.world {
+  width: 90%;
+  opacity: 0.7;
+}
+
+/* ===== MAIN ===== */
+.main {
+  flex: 1;
+  padding: 30px 40px;
+  background-color: var(--bg);
+}
+
+/* ===== TARJETAS ===== */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card {
+  flex: 1;
+  min-width: 200px;
+  border-radius: 15px;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card img {
+  width: 60px;
+}
+
+.card.gold {
+  background: linear-gradient(135deg, #e2c55e, #b08c27);
+}
+
+.card.teal {
+  background: linear-gradient(135deg, #4c6864, #2b403d);
+}
+
+.card.dark {
+  background: linear-gradient(135deg, #455a5a, #2f3e3e);
+}
+
+/* ===== GRID TOP / BOTTOM ===== */
+.grid-top, .grid-bottom {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.block {
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== TABLA ===== */
+.last-trips table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.last-trips th {
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2b3d3f;
+  padding-bottom: 10px;
+}
+
+.last-trips td {
+  padding: 10px 5px;
+  border-bottom: 1px dashed #ccc;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.last-trips td img {
+  border-radius: 50%;
+  width: 35px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.last-trips td span {
+  display: block;
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.circle {
+  background-color: var(--gold);
+  color: #333;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+/* ===== CHARTS ===== */
+.chart canvas {
+  width: 100%;
+  height: 160px;
+}
+
+/* ===== AJUSTE SOLO PARA EL GRÁFICO CIRCULAR ===== */
+.chart-doughnut canvas {
+  width: 30%;          /*  más pequeño que el ancho total */
+  height: 160px;       /*  reduce la altura */
+  display: block;
+  margin: 0 auto;      /*  centrado */
+}
+
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  body { flex-direction: column; }
+  .sidebar { width: 100%; flex-direction: row; border-radius: 0; }
+  nav { flex-direction: row; gap: 5px; }
+  .main { padding: 15px; }
+  .grid-top, .grid-bottom { grid-template-columns: 1fr; }
+}
